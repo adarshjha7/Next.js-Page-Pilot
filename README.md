@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Next.js Page-Pilot 
 
-First, run the development server:
+**Next.js Page-Pilot** is a high-performance, scalable web application built using **Next.js 15** that demonstrates Static Site Generation (SSG), Server-Side Rendering (SSR), and Rate Limiting for API endpoints. Deployed seamlessly using **Vercel**.
+
+## 🔗 Live Demo
+
+👉 [https://next-js-page-pilot.vercel.app](https://next-js-page-pilot.vercel.app)
+
+##  Features
+
+-  **100,000+ static pages** generated using `getStaticPaths` and `getStaticProps`.
+-  **Server-Side Rendering (SSR)** using `getServerSideProps` with dynamic mock data.
+-  **Rate Limiting** middleware (100 req/min) implemented using LRU cache for API protection.
+-  Deployed to production on [Vercel](https://next-js-page-pilot.vercel.app).
+
+
+## 📦 Tech Stack
+
+* **Framework:** Next.js 15
+* **Deployment:** Vercel (serverless functions)
+* **Rate Limiting:** LRU-based token throttling
+* **Styling:** Minimal CSS
+
+
+
+## 🧪 How to Use
+
+### Check SSG
+
+Visit `/ssg/1`, `/ssg/99999` → loads instantly.
+
+### Check SSR
+
+Visit `/ssr/12345` → refresh page multiple times to see dynamic data change.
+
+### Check Rate Limit
+
+Hit `/api/data/12345` repeatedly via Postman. After 100 requests/min → you’ll get `429 Too Many Requests`.
+
+##  Local Setup
 
 ```bash
+git clone https://github.com/yourusername/next-js-page-pilot.git
+cd next-js-page-pilot
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+![Screenshot (39)](https://github.com/user-attachments/assets/03482e0a-7eb6-4567-921e-16d0fa3c6523)
